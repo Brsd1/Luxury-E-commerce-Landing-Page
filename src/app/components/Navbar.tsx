@@ -39,10 +39,10 @@ export function Navbar({ bagCount }: NavbarProps) {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {["Lançamentos", "Coleções", "Promoções"].map((label) => (
+          {["Lançamentos", "Catálogo", "Promoções"].map((label) => (
             <a
               key={label}
-              href="#"
+              href={label === "Catálogo" ? "#catalog" : "#"}
               className="text-sm tracking-[0.1em] text-[#c0b898] hover:text-[#d4af37] transition-colors duration-200"
               style={{ fontFamily: "Barlow, sans-serif" }}
             >
@@ -76,8 +76,12 @@ export function Navbar({ bagCount }: NavbarProps) {
           className="md:hidden fixed top-[68px] left-0 right-0 z-30 px-6 py-6 flex flex-col gap-5"
           style={{ background: "#0f0f0f", borderBottom: "1px solid rgba(212,175,55,0.18)" }}
         >
-          {["Lançamentos", "Coleções", "Promoções"].map((label) => (
-            <a key={label} href="#" className="text-base tracking-[0.08em] text-[#c0b898]">
+          {["Lançamentos", "Catálogo", "Promoções"].map((label) => (
+            <a
+              key={label}
+              href={label === "Catálogo" ? "#catalog" : "#"}
+              className="text-base tracking-[0.08em] text-[#c0b898]"
+            >
               {label}
             </a>
           ))}

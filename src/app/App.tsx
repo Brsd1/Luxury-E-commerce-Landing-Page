@@ -10,6 +10,7 @@ import { FemaleBanner } from "@/app/components/FemaleBanner";
 import { PremiumShelf } from "@/app/components/PremiumShelf";
 import { Footer } from "@/app/components/Footer";
 import { SizeModal } from "@/app/components/SizeModal";
+import { SearchCatalog } from "@/app/components/SearchCatalog";
 
 function Divider() {
   return (
@@ -34,6 +35,10 @@ export default function App() {
     setBagCount((c) => c + 1);
   }
 
+  function handleCatalogAdd() {
+    setBagCount((c) => c + 1);
+  }
+
   return (
     <div
       className="min-h-screen w-full"
@@ -42,6 +47,8 @@ export default function App() {
       <Navbar bagCount={bagCount} />
       <Hero />
       <ProductSection onSelectProduct={setSelectedProduct} />
+      <Divider />
+      <SearchCatalog onAddToBag={handleCatalogAdd} />
       <Divider />
       <Categories />
       <FemaleBanner />
